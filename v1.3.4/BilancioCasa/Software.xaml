@@ -1,0 +1,122 @@
+﻿<Window x:Class="BilancioCasa.Software"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Software" Height="552.648" Width="908.68" ResizeMode="CanMinimize"  Loaded="Window_Loaded" WindowStartupLocation="CenterScreen" Icon="/images/scales.ico" Closing="Window_Closing" Closed="Window_Closed" >
+    <Window.Background>
+        <VisualBrush>
+            <VisualBrush.Visual>
+                <Rectangle Width="1" Height="1">
+                    <Rectangle.Fill>
+                        <LinearGradientBrush  
+                            StartPoint="0,0"
+                            EndPoint="0,1">
+                            <GradientStop Color="#FFFFFFFF" Offset="-0.45"/>
+                            <GradientStop Color="#ADCEFF" Offset="0.5"/>
+                            <GradientStop Color="#97C6F0" Offset="0.65"/>
+                            <GradientStop Color="#99BBFF" Offset="0.825"/>
+                            <GradientStop Color="#8AB5FF" Offset="2"/>
+                        </LinearGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
+            </VisualBrush.Visual>
+        </VisualBrush>
+        
+    </Window.Background>
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Dictionary1.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid x:Name="layoutroot">
+
+        <DockPanel HorizontalAlignment="Left" Height="28" LastChildFill="False" VerticalAlignment="Top" Width="901">
+            <ToolBar Width="932" Margin="-20,0,0,0" Style="{StaticResource AeroToolbar}">
+                <Label Name="welcomelabel" Content="Label" IsHitTestVisible="False" Height="28" Margin="20,0" VerticalAlignment="Top" Width="172"/>
+                <Label Name="datelabel" Content="Label" IsHitTestVisible="False" Height="28" VerticalAlignment="Top" Margin="10,0"/>
+                <Button Content="Change Account" Height="28" VerticalAlignment="Top" Width="110" Click="Button_Click" Style="{StaticResource AeroToolbarButton}" Margin="140,0,0,-1"/>
+                <Button Name="Optionsbtn" Content="Options" Height="28" VerticalAlignment="Top" Width="60" Click="Option_Click" Style="{StaticResource AeroToolbarButton}" Margin="15,0,0,-1"/>
+            </ToolBar>
+        </DockPanel>
+        <DockPanel HorizontalAlignment="Left" Height="435" LastChildFill="False" Margin="10,60,0,0" VerticalAlignment="Top" Width="125">
+            <Border   BorderThickness="2">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="Gray" Opacity="0.13"></SolidColorBrush>
+                </Border.BorderBrush>
+                <Grid HorizontalAlignment="Left" Margin="0,0,0,-2">
+                    <Grid.Background>
+                        <SolidColorBrush Color="White" Opacity="0.17">
+                        </SolidColorBrush>
+                    </Grid.Background>
+                    <Image Cursor="Hand" Margin="-10,-32,10,391" Source="images/Greenstat.png" PreviewMouseLeftButtonDown="Image_PreviewMouseLeftButtonDown"/>
+                    <Button Style="{StaticResource ButtonMenuList}" Content="Travel"  Name="Travel"  Foreground="{StaticResource menu}"  FontSize="15" HorizontalAlignment="Left" Margin="0,70,0,0"  VerticalAlignment="Top" Width="121" Height="34" Click="Travel_Click" PreviewMouseRightButtonDown="Travel_PreviewMouseRightButtonDown" PreviewMouseRightButtonUp="Travel_PreviewMouseRightButtonUp"   >
+                        <Button.ContextMenu>
+                            <ContextMenu Style="{StaticResource contextlist}" Placement="Right"  >
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                    <Button Style="{StaticResource ButtonMenuList}" Content="Children"  Name="Kids"  Foreground="{StaticResource menu}"  FontSize="15" HorizontalAlignment="Left" Margin="0,110,0,0"  VerticalAlignment="Top" Width="121" Height="34" Click="Kids_Click" PreviewMouseRightButtonDown="Kids_PreviewMouseRightButtonDown" PreviewMouseRightButtonUp="Kids_PreviewMouseRightButtonUp"   >
+                        <Button.ContextMenu>
+                            <ContextMenu Style="{StaticResource contextlist}" Placement="Right"  >
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                    <Button Style="{StaticResource ButtonMenuList}" Content="Animals"  Name="Animals"  Foreground="{StaticResource menu}"  FontSize="15" HorizontalAlignment="Left" Margin="0,150,0,0"  VerticalAlignment="Top" Width="121" Height="34" Click="Animals_Click" PreviewMouseRightButtonDown="Animals_PreviewMouseRightButtonDown" PreviewMouseRightButtonUp="Animals_PreviewMouseRightButtonUp"   >
+                        <Button.ContextMenu>
+                            <ContextMenu Style="{StaticResource contextlist}" Placement="Right" x:Name="cmenu1" >
+                            </ContextMenu>              
+                        </Button.ContextMenu>
+                    </Button>
+                    <Button Name="Vehicles" Style="{StaticResource ButtonMenuList}" Foreground="{StaticResource menu}" Content="Vehicles" FontSize="15" HorizontalAlignment="Left" Margin="0,190,0,0" VerticalAlignment="Top" Width="121" Height="34" Click="Vehicles_Click" PreviewMouseRightButtonDown="Vehicles_PreviewMouseRightButtonDown" PreviewMouseRightButtonUp="Vehicles_PreviewMouseRightButtonUp">
+                        <Button.ContextMenu>
+                            <ContextMenu Style="{StaticResource contextlist}" Placement="Right" x:Name="cmenu6" >
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                    <Button Name="Bill" Style="{StaticResource ButtonMenuList}" Foreground="{StaticResource menu}" Content="Bill &amp; Lease" FontSize="15" HorizontalAlignment="Left" Margin="0,230,0,0" VerticalAlignment="Top" Width="121" Height="34" Click="Bill_Click" PreviewMouseRightButtonDown="Bill_PreviewMouseRightButtonDown" MouseRightButtonUp="Bill_MouseRightButtonUp">
+                        <Button.ContextMenu>
+                            <ContextMenu Style="{StaticResource contextlist}" Placement="Right" x:Name="cmenu2" >
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                    <Button Style="{StaticResource ButtonMenuList}" Name="PersSpen" ToolTip="Personal Spending" Foreground="{StaticResource menu}" Content="Pers. Spend." FontSize="15" HorizontalAlignment="Left" Margin="0,270,0,0" VerticalAlignment="Top" Width="121" Height="34" Click="btn1_Click" PreviewMouseRightButtonDown="btn1_PreviewMouseRightButtonDown" PreviewMouseRightButtonUp="btn1_PreviewMouseRightButtonUp">
+                        <Button.ContextMenu>
+                            <ContextMenu Style="{StaticResource contextlist}" Placement="Right" x:Name="cmenu3" >
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                    <Button Name="HousGen" ToolTip="House General" Style="{StaticResource ButtonMenuList}" Foreground="{StaticResource menu}" Content="House Gen." FontSize="15" HorizontalAlignment="Left" Margin="0,310,0,0" VerticalAlignment="Top" Width="121" Height="34" Click="HousGen_Click" PreviewMouseRightButtonDown="HousGen_PreviewMouseRightButtonDown" PreviewMouseRightButtonUp="HousGen_PreviewMouseRightButtonUp">
+                        <Button.ContextMenu>
+                            <ContextMenu Style="{StaticResource contextlist}" Placement="Right" x:Name="cmenu4" >
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                    <Button Style="{StaticResource ButtonMenuList}" Foreground="{StaticResource menu}" Name="Health" Content="Health Care" FontSize="15" HorizontalAlignment="Left" Margin="0,350,0,0" VerticalAlignment="Top" Width="121" Height="34" Click="Health_Click" PreviewMouseRightButtonDown="Health_PreviewMouseRightButtonDown" PreviewMouseRightButtonUp="Health_PreviewMouseRightButtonUp">
+                        <Button.ContextMenu>
+                            <ContextMenu Style="{StaticResource contextlist}" Placement="Right" x:Name="cmenu5" >
+                            </ContextMenu>
+                        </Button.ContextMenu>
+                    </Button>
+                    <Button Name="Balancebtn" Style="{StaticResource ButtonMenu}" Foreground="{StaticResource menu}" Content="Balance" FontSize="17" HorizontalAlignment="Left" Margin="0,390,0,0" VerticalAlignment="Top" Width="121" Height="42" Click="Button_Click_1"/>
+                </Grid>
+            </Border>
+
+        </DockPanel>
+        <DockPanel  HorizontalAlignment="Left" Height="435" LastChildFill="False" Margin="183,60,0,0" VerticalAlignment="Top" Width="678">
+            <Border  BorderThickness="2">
+                <Border.BorderBrush>
+                    <SolidColorBrush Color="Gray" Opacity="0.13"></SolidColorBrush>
+                </Border.BorderBrush>
+                <Grid Name="grid2" HorizontalAlignment="Left" Width="672" Margin="0,0,0,-2">
+                    <Grid.Background>
+                        <SolidColorBrush Color="White" Opacity="0.2"></SolidColorBrush>
+                    </Grid.Background>
+                </Grid>
+            </Border>
+        </DockPanel>
+
+
+    </Grid>
+</Window>

@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="BilancioCasa.Scenario.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300" Width="672" Height="432">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Dictionary1.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Label Name="Title" Template="{StaticResource controllabel}" Foreground="White" FontSize="30" HorizontalAlignment="Left" Margin="47,10,0,0" VerticalAlignment="Top" Height="78" MinWidth="184" Width="431">
+            <Grid>
+                <Label Foreground="White" FontSize="30" HorizontalAlignment="Left" Margin="-188,-10,-11,10">Balance Home</Label>
+            </Grid>
+        </Label>
+        <Label Foreground="White" FontSize="20" HorizontalAlignment="Left" Margin="346,30,0,368" Width="143">v. beta 1.3.4</Label>
+        <Label Foreground="White" FontSize="17" HorizontalAlignment="Left" Margin="134,54,0,344" Width="305">Creative Commons (BY, NC, SA)</Label>
+        <TextBlock FontSize="17" TextWrapping="Wrap" Foreground="{StaticResource menu}"  Margin="23,127,10,196">Balance Home is a free software released by Francesco Maddalena
+        with creative commons license (Attribution, Non Commercial, Share-Alike). For more details check file 'LICENSE.txt'.</TextBlock>
+        <TextBlock FontSize="17" TextWrapping="Wrap" Foreground="{StaticResource menu}"  Margin="23,241,10,61">
+        This software permits you to manage your bills and personal familiar's spending to have a general and detailed balance for a long period.
+        Create bills choosing between 8 categories (and sub-categories if necessary).
+        Edit bills.
+        Edit software's data in the options menu like accounts, familiar's data, centers's data.</TextBlock>
+        <Image Source="/images/byncsa.png" Margin="23,394,556,5"/>
+        <TextBlock Margin="501,394,30,10"><Hyperlink Click="Hyperlink_Click" FontSize="16" Foreground="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}">For Documentation</Hyperlink></TextBlock>
+    </Grid>
+</UserControl>
+

@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="BilancioCasa.Scenario.Bill.Water"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Width="595" Height="377">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../../Dictionary1.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Label Content="Bill Water" Foreground="#FF5996AC" FontSize="30" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Height="46" Width="139"/>
+        <Label Content="Date of Bill:" FontSize="16" HorizontalAlignment="Left" Margin="10,90,0,0" VerticalAlignment="Top"/>
+        <DatePicker HorizontalAlignment="Left" Margin="114,96,0,0" VerticalAlignment="Top"/>
+        <Label Content="Import:" FontSize="16" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top" Width="72"/>
+        <Label Content="." FontSize="19" HorizontalAlignment="Left" Margin="168,131,0,0" VerticalAlignment="Top" Height="32" Width="14" />
+        <Label Content="Your Note:" FontSize="16" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top"/>
+        <TextBox HorizontalAlignment="Left" Height="103" Margin="10,210,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="575"/>
+        <Button Content="Cancel" Style="{StaticResource CustomButtonStyle3}" HorizontalAlignment="Left" Margin="469,338,0,0" VerticalAlignment="Top" Width="94" Height="25"/>
+        <Button Content="Confirm" Style="{StaticResource CustomButtonStyle3}" HorizontalAlignment="Left" Margin="274,338,0,0" VerticalAlignment="Top" Width="94" Height="25"/>
+        <ComboBox Name="combobox" HorizontalAlignment="Left" Margin="230,140,0,0" VerticalAlignment="Top" Width="90">
+            <ComboBoxItem Content="Euros" HorizontalAlignment="Left" Width="55"/>
+            <ComboBoxItem Content="Dollars" HorizontalAlignment="Left" Width="55"/>
+            <ComboBoxItem Content="Sterlins" HorizontalAlignment="Left" Width="55"/>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" FontSize="15" Height="22" Margin="114,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="54"/>
+        <TextBox HorizontalAlignment="Left" MaxLength="2" FontSize="15" Height="22" Margin="182,141,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="30"/>
+
+    </Grid>
+</UserControl>

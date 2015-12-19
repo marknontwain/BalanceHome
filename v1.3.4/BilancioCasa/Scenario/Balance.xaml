@@ -1,0 +1,344 @@
+﻿<UserControl x:Class="BilancioCasa.Scenario.Balance"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Width="672" Height="432" Loaded="UserControl_Loaded" >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Dictionary1.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <SolidColorBrush x:Key="tabcolor" Color="#FFACD2FF" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <TabControl Background="Transparent" Style="{StaticResource tabalance}">
+            <TabItem Header="General" FontSize="15" Background="{StaticResource tabcolor}">
+                <Grid >
+                    <ComboBox Opacity="0.7" Name="combo1" Margin="20,26,519,0" VerticalAlignment="Top" SelectionChanged="ComboBox_SelectionChanged">
+                        <ComboBoxItem>Today</ComboBoxItem>
+                        <ComboBoxItem>Last Week</ComboBoxItem>
+                        <ComboBoxItem>Last Month</ComboBoxItem>
+                        <ComboBoxItem>Last 4 Months</ComboBoxItem>
+                        <ComboBoxItem>Last 8 Months</ComboBoxItem>
+                        <ComboBoxItem>Last Year</ComboBoxItem>
+                    </ComboBox>
+                    <Label Margin="175,43,0,321" Width="110" Height="35" HorizontalContentAlignment="Right" Content="Earnings:" FontSize="19" Foreground="{StaticResource menu}" HorizontalAlignment="Left" ></Label>
+                    <Label Name="lbl1" Margin="315,43,79,321" FontSize="19"></Label>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,78,79,320"/>
+                    <Label Margin="175,78,0,289" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Travel:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left" ></Label>
+                    <Label Name="lbl2" Margin="315,78,79,289"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,110,79,288"/>
+                    <Label Margin="175,110,0,257" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Children:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lbl3" Margin="315,110,79,257"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,142,79,256"/>
+                    <Label Margin="175,142,0,225"  Width="110" Height="32" HorizontalContentAlignment="Right" Content="Animals:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lbl4" Margin="315,142,79,225"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,174,79,224"/>
+                    <Label Margin="175,174,0,193"  Width="110" Height="32" HorizontalContentAlignment="Right" Content="Vehicles:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lbl5" Margin="315,174,79,193"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,206,79,192"/>
+                    <Label Margin="175,206,0,161"  Width="110" Height="32" HorizontalContentAlignment="Right" Content="Bill &amp; Lease:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lbl6" Margin="315,207,79,160"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,238,79,160"/>
+                    <Label Margin="175,238,0,129"  Width="110" Height="32" HorizontalContentAlignment="Right" Content="Pers. Spend.:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lbl7" Margin="315,239,79,128"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,270,79,128"/>
+                    <Label Margin="175,270,0,97"  Width="110" Height="32" HorizontalContentAlignment="Right" Content="House Gen.:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lbl8" Margin="315,270,79,97"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,302,79,96"/>
+                    <Label Margin="175,302,0,65"  Width="110" Height="32" HorizontalContentAlignment="Right" Content="Healt Care:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lbl9" Margin="315,302,79,65"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="168,348,43,50"/>
+                    <Label Name="lbl10" FontSize="19" Margin="315,357,79,10"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Travel"  FontSize="15" Background="{StaticResource tabcolor}">
+                <Grid >
+                    <ComboBox Opacity="0.7" Name="travelcombo2" Margin="20,26,519,0" VerticalAlignment="Top" SelectionChanged="combo2_SelectionChanged">
+                        <ComboBoxItem>Today</ComboBoxItem>
+                        <ComboBoxItem>Last Week</ComboBoxItem>
+                        <ComboBoxItem>Last Month</ComboBoxItem>
+                        <ComboBoxItem>Last 4 Months</ComboBoxItem>
+                        <ComboBoxItem>Last 8 Months</ComboBoxItem>
+                        <ComboBoxItem>Last Year</ComboBoxItem>
+                    </ComboBox>
+                    <GroupBox Name="grp1" Header="Person Concerned" Foreground="#FF6899C3" FontSize="15" HorizontalAlignment="Left" Margin="338,0,0,0" VerticalAlignment="Top" Height="60" Width="314">
+                        <Grid>
+                            <RadioButton Name="rd1" Margin="5,11,281,8" Checked="rd1_Checked"/>
+                            <Label FontSize="13" Margin="21,4,178,0" Opacity="0.7" Foreground="#FF8D8D8D">Family (Generic)</Label>
+                            <RadioButton Name="rd2" Margin="144,11,142,8" Checked="rd2_Checked"/>
+                            <ComboBox IsEnabled="false" Name="travelcombo1"  Opacity="0.7" SelectionChanged="comb1_SelectionChanged" Foreground="#FF8D8D8D" FontSize="13"  HorizontalAlignment="Left" Margin="165,6,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
+                        </Grid>
+                    </GroupBox>
+                    <Label Margin="175,78,0,289" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Ticket:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left" ></Label>
+                    <Label Name="lbltrav1" Margin="315,78,79,289"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,95,26,288" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,110,79,288"/>
+                    <Label Margin="175,110,0,257" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Food &amp; Lod.:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lbltrav2" Margin="315,110,79,257"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,127,26,256" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_1"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,142,79,256"/>
+                    <Label Margin="175,142,0,225"  Width="110" Height="35" HorizontalContentAlignment="Right" Content="Spending:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lbltrav3" Margin="315,142,79,225"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,159,26,224" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_2"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="168,0,43,210" VerticalAlignment="Bottom"/>
+                    <Label Name="lbltrav4" FontSize="17" Margin="315,197,79,170"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Children"  FontSize="15" Background="{StaticResource tabcolor}">
+                <Grid >
+                    <ComboBox Opacity="0.7" Name="kidcombo3" Margin="20,26,519,0" VerticalAlignment="Top" SelectionChanged="combo3_SelectionChanged">
+                        <ComboBoxItem>Today</ComboBoxItem>
+                        <ComboBoxItem>Last Week</ComboBoxItem>
+                        <ComboBoxItem>Last Month</ComboBoxItem>
+                        <ComboBoxItem>Last 4 Months</ComboBoxItem>
+                        <ComboBoxItem>Last 8 Months</ComboBoxItem>
+                        <ComboBoxItem>Last Year</ComboBoxItem>
+                    </ComboBox>
+                    <GroupBox Name="grp2" Header="Person Concerned" Foreground="#FF6899C3" FontSize="15" HorizontalAlignment="Left" Margin="338,0,0,0" VerticalAlignment="Top" Height="60" Width="314">
+                        <Grid>
+                            <RadioButton Name="rd3" Margin="5,11,281,8" Checked="rd3_Checked"/>
+                            <Label FontSize="13" Margin="21,4,178,0" Opacity="0.7" Foreground="#FF8D8D8D">Family (Generic)</Label>
+                            <RadioButton Name="rd4" Margin="144,11,142,8" Checked="rd4_Checked"/>
+                            <ComboBox IsEnabled="false" Name="kidcombo2" SelectionChanged="comb2_SelectionChanged" Opacity="0.7" Foreground="#FF8D8D8D" FontSize="13"  HorizontalAlignment="Left" Margin="165,6,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
+                        </Grid>
+                    </GroupBox>
+                    <Label Margin="175,78,0,289" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Books:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left" ></Label>
+                    <Label Name="lblchild1" Margin="315,78,79,289"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,95,26,288" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_3"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,110,79,288"/>
+                    <Label Margin="175,110,0,257" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Games:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblchild2" Margin="315,110,79,257"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,127,26,256" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_4" />
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="168,0,43,242" VerticalAlignment="Bottom"/>
+                    <Label Name="lblchild3" FontSize="17" Margin="315,165,79,202"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Animals"  FontSize="15" Background="{StaticResource tabcolor}">
+                <Grid >
+                    <ComboBox Opacity="0.7" Name="animalcombo4" Margin="20,26,519,0" VerticalAlignment="Top" SelectionChanged="combo4_SelectionChanged">
+                        <ComboBoxItem>Today</ComboBoxItem>
+                        <ComboBoxItem>Last Week</ComboBoxItem>
+                        <ComboBoxItem>Last Month</ComboBoxItem>
+                        <ComboBoxItem>Last 4 Months</ComboBoxItem>
+                        <ComboBoxItem>Last 8 Months</ComboBoxItem>
+                        <ComboBoxItem>Last Year</ComboBoxItem>
+                    </ComboBox>
+                    <GroupBox Name="grp3" Header="Center Concerned" Foreground="#FF6899C3" FontSize="15" HorizontalAlignment="Left" Margin="338,0,0,0" VerticalAlignment="Top" Height="60" Width="314">
+                        <Grid>
+                            <RadioButton Name="rd5" Margin="5,11,281,8" Checked="rd5_Checked"/>
+                            <Label FontSize="13" Margin="21,4,178,0" Opacity="0.7" Foreground="#FF8D8D8D">Family (Generic)</Label>
+                            <RadioButton Checked="rd6_Checked" Name="rd6" Margin="144,11,142,8"/>
+                            <ComboBox IsEnabled="False" Name="animalcombo3" SelectionChanged="comb3_SelectionChanged" Opacity="0.7" Foreground="#FF8D8D8D" FontSize="13"  HorizontalAlignment="Left" Margin="165,6,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
+                        </Grid>
+                    </GroupBox>
+                    <Label Margin="175,78,0,289" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Animal Feed:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left" ></Label>
+                    <Label Name="lblanim1" Margin="315,78,79,289"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,95,26,288" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_5"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,110,79,288"/>
+                    <Label Margin="175,110,0,257" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Health:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblanim2" Margin="315,110,79,257"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,127,26,256" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_6"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,142,79,256"/>
+                    <Label Margin="175,142,0,225"  Width="110" Height="35" HorizontalContentAlignment="Right" Content="Accessories:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblanim3" Margin="315,142,79,225"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,159,26,224" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_7"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="168,0,43,210" VerticalAlignment="Bottom"/>
+                    <Label Name="lblanim4" FontSize="17" Margin="315,197,79,170"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Vehicles"  FontSize="15" Background="{StaticResource tabcolor}">
+                <Grid >
+                    <ComboBox Opacity="0.7" Name="vehiclecombo5" Margin="20,26,519,0" VerticalAlignment="Top" SelectionChanged="combo5_SelectionChanged">
+                        <ComboBoxItem>Today</ComboBoxItem>
+                        <ComboBoxItem>Last Week</ComboBoxItem>
+                        <ComboBoxItem>Last Month</ComboBoxItem>
+                        <ComboBoxItem>Last 4 Months</ComboBoxItem>
+                        <ComboBoxItem>Last 8 Months</ComboBoxItem>
+                        <ComboBoxItem>Last Year</ComboBoxItem>
+                    </ComboBox>
+                    <GroupBox Name="grp4" Header="Center Concerned" Foreground="#FF6899C3" FontSize="15" HorizontalAlignment="Left" Margin="338,0,0,0" VerticalAlignment="Top" Height="60" Width="314">
+                        <Grid>
+                            <RadioButton Name="rd7" Margin="5,11,281,8" Checked="rd7_Checked"/>
+                            <Label FontSize="13" Margin="21,4,178,0" Opacity="0.7" Foreground="#FF8D8D8D">Family (Generic)</Label>
+                            <RadioButton Name="rd8" Margin="144,11,142,8" Checked="rd8_Checked"/>
+                            <ComboBox Name="vehiclecombo4" IsEnabled="False" Opacity="0.7" Foreground="#FF8D8D8D" FontSize="13" SelectionChanged="comb4_SelectionChanged"  HorizontalAlignment="Left" Margin="165,6,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
+                        </Grid>
+                    </GroupBox>
+                    <Label Margin="175,78,0,289" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Repair:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left" ></Label>
+                    <Label Name="lblvehic1" Margin="315,78,79,289"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,95,26,288" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_8"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,110,79,288"/>
+                    <Label Margin="175,110,0,257" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Garage:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblvehic2" Margin="315,110,79,257"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,127,26,256" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_9"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,142,79,256"/>
+                    <Label Margin="175,142,0,225"  Width="110" Height="32" HorizontalContentAlignment="Right" Content="Purchase:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblvehic3" Margin="315,142,79,225"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,159,26,224" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_10" />
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,174,79,224"/>
+                    <Label Margin="175,174,0,193"  Width="110" Height="32" HorizontalContentAlignment="Right" Content="Propellant:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblvehic4" Margin="315,174,79,193"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,191,26,192" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_11"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="168,0,43,178" VerticalAlignment="Bottom"/>
+                    <Label Name="lblvehic5" FontSize="17" Margin="315,229,79,138"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="B. &amp; L." ToolTip="Bill &amp; Lease" FontSize="15" Background="{StaticResource tabcolor}">
+                <Grid >
+                    <ComboBox Opacity="0.7" Name="billandlcombo6" Margin="20,26,519,0" VerticalAlignment="Top" SelectionChanged="combo6_SelectionChanged">
+                        <ComboBoxItem>Today</ComboBoxItem>
+                        <ComboBoxItem>Last Week</ComboBoxItem>
+                        <ComboBoxItem>Last Month</ComboBoxItem>
+                        <ComboBoxItem>Last 4 Months</ComboBoxItem>
+                        <ComboBoxItem>Last 8 Months</ComboBoxItem>
+                        <ComboBoxItem>Last Year</ComboBoxItem>
+                    </ComboBox>
+                    <!-- <Name="grp5" Header="Person Concerned" Foreground="#FF6899C3" FontSize="15" HorizontalAlignment="Left" Margin="338,0,0,0" VerticalAlignment="Top" Height="60" Width="314">
+                        <Grid>
+                            <RadioButton Name="rd9" Margin="5,11,281,8" Checked="rd9_Checked"/>
+                            <Label FontSize="13" Margin="21,4,178,0" Opacity="0.7" Foreground="#FF8D8D8D">Family (Generic)</Label>
+                            <RadioButton Name="rd10" Margin="144,11,142,8"/>
+                            <ComboBox Name="comb5"  Opacity="0.7" Foreground="#FF8D8D8D" FontSize="13"  HorizontalAlignment="Left" Margin="165,6,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
+                        </Grid>
+                    </GroupBox>-->
+                    <Label Margin="175,78,0,289" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Lease:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left" ></Label>
+                    <Label Name="lblbill1" Margin="315,78,79,289"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,95,26,288" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_12"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,110,79,288"/>
+                    <Label Margin="175,110,0,257" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Water:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblbill2" Margin="315,110,79,257"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,127,26,256" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_13" />
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,142,79,256"/>
+                    <Label Margin="175,142,0,225"  Width="110" Height="32" HorizontalContentAlignment="Right" Content="Gas:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblbill3" Margin="315,142,79,225"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,159,26,224" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_14"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,174,79,224"/>
+                    <Label Margin="175,174,0,193"  Width="110" Height="32" HorizontalContentAlignment="Right" Content="Electricity:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblbill4" Margin="315,174,79,193"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,191,26,192" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_15"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,206,79,192"/>
+                    <Label Margin="175,206,0,161"  Width="110" Height="32" HorizontalContentAlignment="Right" Content="Telephony:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblbill5" Margin="315,207,79,160"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,223,26,160" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_16"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,238,79,160"/>
+                    <Label Margin="175,238,0,129"  Width="110" Height="32" HorizontalContentAlignment="Right" Content="Condomin.:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblbill6" Margin="315,239,79,128"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,255,26,128" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_17"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="168,0,43,113" VerticalAlignment="Bottom"/>
+                    <Label Name="lblbill7" FontSize="17" Margin="315,294,79,73"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="P. S." ToolTip="Personal Spending" FontSize="15" Background="{StaticResource tabcolor}">
+                <Grid >
+                    <ComboBox Opacity="0.7" Name="personalcombo7" Margin="20,26,519,0" VerticalAlignment="Top" SelectionChanged="combo7_SelectionChanged">
+                        <ComboBoxItem>Today</ComboBoxItem>
+                        <ComboBoxItem>Last Week</ComboBoxItem>
+                        <ComboBoxItem>Last Month</ComboBoxItem>
+                        <ComboBoxItem>Last 4 Months</ComboBoxItem>
+                        <ComboBoxItem>Last 8 Months</ComboBoxItem>
+                        <ComboBoxItem>Last Year</ComboBoxItem>
+                    </ComboBox>
+                    <GroupBox Name="grp6" Header="Person Concerned" Foreground="#FF6899C3" FontSize="15" HorizontalAlignment="Left" Margin="338,0,0,0" VerticalAlignment="Top" Height="60" Width="314">
+                        <Grid>
+                            <RadioButton Name="rd11" Margin="5,11,281,8" Checked="rd11_Checked"/>
+                            <Label FontSize="13" Margin="21,4,178,0" Opacity="0.7" Foreground="#FF8D8D8D">Family (Generic)</Label>
+                            <RadioButton Checked="rd12_Checked" Name="rd12" Margin="144,11,142,8"/>
+                            <ComboBox IsEnabled="False" SelectionChanged="comb6_SelectionChanged" Name="personalcombo6"  Opacity="0.7" Foreground="#FF8D8D8D" FontSize="13"  HorizontalAlignment="Left" Margin="165,6,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
+                        </Grid>
+                    </GroupBox>
+                    <Label Margin="175,78,0,289" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Sport:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left" ></Label>
+                    <Label Name="lblpers1" Margin="315,78,79,289"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,95,26,288" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_18" />
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,110,79,288"/>
+                    <Label Margin="175,110,0,257" Width="110" Height="35" HorizontalContentAlignment="Right" Content="Shopping:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblpers2" Margin="315,110,79,257"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,127,26,256" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_19"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,142,79,256"/>
+                    <Label Margin="175,142,0,225"  Width="110" Height="32" HorizontalContentAlignment="Right" Content="Go Out:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblpers3" Margin="315,142,79,225"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,159,26,224" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_20"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,174,79,224"/>
+                    <Label Margin="175,174,0,193"  Width="110" Height="35" HorizontalContentAlignment="Right" Content="Hobby:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblpers4" Margin="315,174,79,193"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,191,26,192" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_21"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="168,0,43,178" VerticalAlignment="Bottom"/>
+                    <Label Name="lblpers5" FontSize="17" Margin="315,229,79,138"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="House Gen."  FontSize="15" Background="{StaticResource tabcolor}">
+                <Grid >
+                    <ComboBox Opacity="0.7" Name="housegencombo8" Margin="20,26,519,0" VerticalAlignment="Top" SelectionChanged="combo8_SelectionChanged">
+                        <ComboBoxItem>Today</ComboBoxItem>
+                        <ComboBoxItem>Last Week</ComboBoxItem>
+                        <ComboBoxItem>Last Month</ComboBoxItem>
+                        <ComboBoxItem>Last 4 Months</ComboBoxItem>
+                        <ComboBoxItem>Last 8 Months</ComboBoxItem>
+                        <ComboBoxItem>Last Year</ComboBoxItem>
+                    </ComboBox>
+                    <GroupBox Name="grp7" Header="Center/Service Concerned" Foreground="#FF6899C3" FontSize="15" HorizontalAlignment="Left" Margin="338,0,0,0" VerticalAlignment="Top" Height="60" Width="314">
+                        <Grid>
+                            <RadioButton Name="rd13" Margin="5,11,281,8" Checked="rd13_Checked"/>
+                            <Label FontSize="13" Margin="21,4,178,0" Opacity="0.7" Foreground="#FF8D8D8D">Family (Generic)</Label>
+                            <RadioButton Name="rd14" Margin="144,11,142,8" Checked="rd14_Checked"/>
+                            <ComboBox Name="housegencombo7" IsEnabled="False"  Opacity="0.7" Foreground="#FF8D8D8D" SelectionChanged="comb7_SelectionChanged" FontSize="13"  HorizontalAlignment="Left" Margin="165,6,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
+                        </Grid>
+                    </GroupBox>
+                    <Label Margin="175,78,0,289" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Food:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left" ></Label>
+                    <Label Name="lblgen1" Margin="315,78,79,289"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,95,26,288" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_22" />
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,110,79,288"/>
+                    <Label Margin="175,110,0,257" Width="110" Height="35" HorizontalContentAlignment="Right" Content="Furniture:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblgen2" Margin="315,110,79,257"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,127,26,256" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_23" />
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,142,79,256"/>
+                    <Label Margin="175,142,0,225"  Width="110" Height="32" HorizontalContentAlignment="Right" Content="Appliance:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblgen3" Margin="315,142,79,225"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,159,26,224" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_24" />
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,174,79,224"/>
+                    <Label Margin="175,174,0,193"  Width="110" Height="35" HorizontalContentAlignment="Right" Content="Rep. &amp; Ser.:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblgen4" Margin="315,174,79,193"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,191,26,192" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_25" />
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="168,0,43,178" VerticalAlignment="Bottom"/>
+                    <Label Name="lblgen5" FontSize="17" Margin="315,229,79,138"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Health Care"  FontSize="15" Background="{StaticResource tabcolor}">
+                <Grid >
+                    <ComboBox Opacity="0.7" Name="healthcombo9" Margin="20,26,519,0" VerticalAlignment="Top" SelectionChanged="combo9_SelectionChanged">
+                        <ComboBoxItem>Today</ComboBoxItem>
+                        <ComboBoxItem>Last Week</ComboBoxItem>
+                        <ComboBoxItem>Last Month</ComboBoxItem>
+                        <ComboBoxItem>Last 4 Months</ComboBoxItem>
+                        <ComboBoxItem>Last 8 Months</ComboBoxItem>
+                        <ComboBoxItem>Last Year</ComboBoxItem>
+                    </ComboBox>
+                    <GroupBox Name="grp8" Header="Person/Center Concerned" Foreground="#FF6899C3" FontSize="15"  HorizontalAlignment="Left" Margin="338,0,0,0" VerticalAlignment="Top" Height="60" Width="314">
+                        <Grid>
+                            <RadioButton Name="rd15" Margin="5,11,281,8" Checked="rd15_Checked"/>
+                            <Label FontSize="13" Margin="21,4,178,0" Opacity="0.7" Foreground="#FF8D8D8D">Family (Generic)</Label>
+                            <RadioButton Checked="rd16_Checked" Name="rd16" Margin="144,11,142,8"/>
+                            <ComboBox IsEnabled="False" SelectionChanged="comb8_SelectionChanged" Name="healthcombo8"  Opacity="0.7" Foreground="#FF8D8D8D" FontSize="13"  HorizontalAlignment="Left" Margin="165,6,0,0" VerticalAlignment="Top" Width="120" Height="24"/>
+                        </Grid>
+                    </GroupBox>
+                    <Label Margin="175,78,0,289" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Body Cure:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left" ></Label>
+                    <Label Name="lblhealth1" Margin="315,78,79,289"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,95,26,288" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_26"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,110,79,288"/>
+                    <Label Margin="175,110,0,257" Width="110" Height="32" HorizontalContentAlignment="Right" Content="Medicine:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblhealth2" Margin="315,110,79,257"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,127,26,256" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_27"/>
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="315,142,79,256"/>
+                    <Label Margin="175,142,0,225"  Width="110" Height="35" HorizontalContentAlignment="Right" Content="Medic. Exam:" FontSize="17" Foreground="{StaticResource menu}" HorizontalAlignment="Left"></Label>
+                    <Label Name="lblhealth3" Margin="315,142,79,225"/>
+                    <TextBlock TextWrapping="Wrap" FontSize="14" Cursor="Hand" Foreground="#FF6899C3" Text="Details" Margin="593,159,26,224" MouseLeftButtonDown="TextBlock_MouseLeftButtonDown_28" />
+                    <Border BorderBrush="Black" BorderThickness="10" Height="0.85" Margin="168,0,43,210" VerticalAlignment="Bottom"/>
+                    <Label Name="lblhealth4" FontSize="17" Margin="315,197,79,170"/>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</UserControl>
